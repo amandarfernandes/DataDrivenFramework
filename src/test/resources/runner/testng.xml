@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Data Driven Framework" verbose="1">
+<listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+      <listener class-name="com.ferns.listeners.CustomListeners" />
+  </listeners>	
+  <test thread-count="5" name="Bank Manager Tests">
+    <classes>
+      <class name="com.ferns.testcases.BankManagerLoginTest" />
+      <class name="com.ferns.testcases.AddCustomerTest" />
+    </classes>
+  </test> <!-- Data Driven Framework -->
+</suite> <!-- Suite -->

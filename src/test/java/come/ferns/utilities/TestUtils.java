@@ -6,7 +6,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import java.io.File;
-import java.io.IOException;
+//import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 
 import com.ferns.base.TestBase;
@@ -20,9 +20,9 @@ public class TestUtils extends TestBase {
 		try {
 			//FileHandler.copy(src, new File(fileName));
 			FileUtils.copyFile(src,new File(fileName));
-
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			log.error("Screen shot taken");
+		} catch (Exception e) {
+			log.warn("No screenshot taken. "+e.getMessage());
 			e.printStackTrace();
 		}
 		

@@ -23,9 +23,12 @@ public class AddCustomerTest extends TestBase {
 
 		log.debug("adding customer with name " + fname + " " + lname + " " + code);
 		Alert alert = wd.until(ExpectedConditions.alertIsPresent());
-		Assert.assertTrue(alert.getText().contains(alertMsg+" !!!!!"));
-		log.debug("Customer was added. Received confirmation alert " + alertMsg);
+		driver.switchTo().alert();
+		String alertText = alert.getText();
 		alert.accept();
+		System.out.println(alertText);
+		Assert.assertTrue(alertText.contains(alertMsg+"!!!!"),"Alert Message did not match!");
+		log.debug("Customer was added. Received confirmation alert " + alertMsg);	
 	}
 
 	@DataProvider

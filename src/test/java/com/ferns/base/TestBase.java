@@ -81,7 +81,7 @@ public class TestBase {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicitWait")), TimeUnit.SECONDS);
 		log.info("Loaded website at "+config.getProperty("url"));	
-		wd = new WebDriverWait(driver,5);
+		wd = new WebDriverWait(driver,10);
 	}
 	
 	public boolean isElementPresent(By by) {
@@ -97,8 +97,7 @@ public class TestBase {
 	
 	@AfterSuite
 	public void tearDown() {
-		if (driver != null) {
-			
+		if (driver != null) {	
 			driver.quit();
 			log.debug("Quit the browser!");
 		}

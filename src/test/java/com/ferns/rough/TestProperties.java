@@ -16,8 +16,7 @@ public class TestProperties {
 		fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\properties\\OR.properties");
 		or.load(fis);
 		System.out.println(or.getProperty("customerLoginBtn"));
-		
-		
+				
 	}
 
 }

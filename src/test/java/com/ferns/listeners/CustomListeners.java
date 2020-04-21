@@ -27,8 +27,9 @@ public class CustomListeners implements ITestListener {
 		//ITestListener.super.onTestFailure(result);
 		System.setProperty("org.uncommons.reportng.escape-output", "false");
 		TestUtils.captureScreenshot(result.getName());
-		Reporter.log("Generating Error Screenshot");
-		String test = "<a target=\"blank\" href=\""+result.getName()+".jpg \">Screenshot</a>";
+		Reporter.log("Click to see Error Screenshot");
+		//String test = "<a target=\"blank\" href=\""+result.getName()+".png \">Screenshot</a>";
+		String test = "<a target=\"blank\" href=\""+TestUtils.fileName+"\">Screenshot</a>";
 		System.out.println(test);
 		Reporter.log(test);
 	}
